@@ -1,0 +1,76 @@
+// achievements section
+
+.achievements{
+    padding: 10% 0;
+    min-height: 100vh;
+
+    background: $dark-1;
+
+    .container{
+        .row2{
+            @include flexbox(center , center ,row);
+
+            .achievements-img, .achievements-items {
+                flex: 1 1 40rem;
+            }
+
+
+            .achievements-img{
+                @include flexbox(center , center, column);
+        
+                img{
+                    max-width: 42rem;
+                    width:100%;
+                    animation: zoomInOut 7s linear infinite;
+                }
+            }
+
+            .achievements-items{
+
+                .row{
+                    @include flexbox(center , center ,row);
+
+        
+                    .achievement-item{
+                        flex: 1 1 20rem;
+                        margin: 0 1.5rem 3rem;
+
+                        padding: 12% 8%;
+                        text-align: center;
+                        border-radius: 0.4rem;
+
+                        h3{
+                            font-size: 3.5rem;
+                            color: $white-color-1;
+                            text-transform: capitalize;
+                            margin-bottom: 10%;
+                        }
+
+                        p{
+                            text-transform: uppercase;
+                            color: $white-color-1;
+                        }
+                    }
+
+                    .one{
+                        background: $color-1;
+                    }
+                    .two{
+                        background: $color-2;
+                    }       
+                    .three{
+                        background: $main-color;
+                    }   
+                    .four{
+                        background: $dark-2;
+
+                        i{
+                            font-size: 2.6rem;
+                        }
+                    }          
+                }
+            }
+        }
+    }
+
+}

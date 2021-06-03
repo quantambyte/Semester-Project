@@ -1,0 +1,31 @@
+
+// declaring variables
+$header1 : 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+
+$text:2.5rem;
+
+$background-color: #ece8e8;
+
+$gray-text: gray;
+
+
+// mixins
+@mixin flex ($justify , $align , $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+// importing other sass files
+@import './globalStyle';
+@import './Landing-div/landing';
+@import './Navbar/navbar';
+@import './About-Us/about-us';
+@import './Faculty/faculty';
+@import './Programs/programs';
+
+

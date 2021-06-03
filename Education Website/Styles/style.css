@@ -1,0 +1,715 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Montserrat' , sans-serif;
+}
+
+li,
+button,
+a,
+p {
+  font-size: 2.5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+.landing-div {
+  position: relative;
+  min-height: 100vh;
+  background: #ece8e8;
+}
+
+.main-landing {
+  min-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.main-landing h2 {
+  color: #fe6f57;
+  letter-spacing: 0.5rem;
+  font-weight: 580;
+  font-size: 2rem;
+  margin-bottom: 5%;
+}
+
+.main-landing h3 {
+  color: #363636;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  font-size: 5rem;
+  margin-bottom: 5%;
+}
+
+.main-landing hr {
+  color: #fe6f57;
+  width: 8%;
+}
+
+header.navbar-header {
+  min-height: 20vh;
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+header.navbar-header .top-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header.navbar-header .top-menu .logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+}
+
+header.navbar-header .top-menu .top-menu-contacts {
+  padding: 4% 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item {
+  padding: 1% 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item .top-menu-contacts-item-icon {
+  margin: 0 15%;
+}
+
+header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item .top-menu-contacts-item-icon img {
+  width: 4rem;
+  margin: 0 5%;
+}
+
+header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item .top-menu-contacts-item-content h3 {
+  font-weight: 550;
+  font-size: 1.9rem;
+}
+
+header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item .top-menu-contacts-item-content h4 {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+header.navbar-header nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: white;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1.5% 3%;
+  font-weight: bold;
+  color: gray;
+}
+
+header.navbar-header nav .active {
+  color: orangered;
+}
+
+header.navbar-header nav li {
+  font-size: 1.4rem;
+}
+
+header.navbar-header nav ul.nav-links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header.navbar-header nav ul.nav-social-media {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: 30%;
+}
+
+header.navbar-header nav ul.nav-social-media li img {
+  width: 20px;
+  margin: 0 5%;
+}
+
+@media screen and (max-width: 1145px) {
+  .top-menu-contacts {
+    display: none;
+    background: black;
+  }
+}
+
+#about-us {
+  min-height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: auto;
+  padding: 8% 0;
+}
+
+#about-us .about-us-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 8% 0;
+}
+
+#about-us .about-us-text h3 {
+  color: gray;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+#about-us .about-us-text h4 {
+  font-size: 3rem;
+  margin-bottom: 3%;
+  color: #3f3f3f;
+}
+
+#about-us .about-us-text p {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+#about-us .about-us-row .about-us-cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: #fff;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.8)), to(rgba(195, 55, 100, 0.8))), url("../../Assets/img/About Us/online-learning.jpg");
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../../Assets/img/About Us/online-learning.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1 a:hover {
+  color: #fe6f57;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(195, 55, 100, 0.8)), to(rgba(29, 38, 113, 0.8))), url("../../Assets/img/About Us/online-learning.jpg");
+  background: linear-gradient(rgba(195, 55, 100, 0.8), rgba(29, 38, 113, 0.8)), url("../../Assets/img/About Us/online-learning.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col1:hover a:hover {
+  color: #fe6f57;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.8)), to(rgba(195, 55, 100, 0.8))), url("../../Assets/img/About Us/library.jpg");
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../../Assets/img/About Us/library.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2 a:hover {
+  color: #fe6f57;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(195, 55, 100, 0.8)), to(rgba(29, 38, 113, 0.8))), url("../../Assets/img/About Us/library.jpg");
+  background: linear-gradient(rgba(195, 55, 100, 0.8), rgba(29, 38, 113, 0.8)), url("../../Assets/img/About Us/library.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col2:hover a:hover {
+  color: #fe6f57;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.8)), to(rgba(195, 55, 100, 0.8))), url("../../Assets/img/About Us/scholarship.jpg");
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../../Assets/img/About Us/scholarship.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3 a:hover {
+  color: #fe6f57;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(195, 55, 100, 0.8)), to(rgba(29, 38, 113, 0.8))), url("../../Assets/img/About Us/scholarship.jpg");
+  background: linear-gradient(rgba(195, 55, 100, 0.8), rgba(29, 38, 113, 0.8)), url("../../Assets/img/About Us/scholarship.jpg");
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 15rem;
+          flex: 1 1 15rem;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 3% 0;
+  margin-right: 3%;
+  padding: 5%;
+  letter-spacing: 0.1rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 20%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10%;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover p {
+  font-size: 1.5rem;
+  margin-bottom: 10%;
+  letter-spacing: 0.05rem;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#about-us .about-us-row .about-us-cols .about-us-col3:hover a:hover {
+  color: #fe6f57;
+}
+
+.faculty {
+  background: #ece8e8;
+}
+
+.faculty .faculty-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  padding: 10% 5%;
+}
+
+.faculty .faculty-row .faculty-col1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30rem;
+          flex: 1 1 30rem;
+}
+
+.faculty .faculty-row .faculty-col1 h2 {
+  font-weight: normal;
+  letter-spacing: 0.3rem;
+  margin-bottom: 10%;
+  font-size: 2rem;
+  color: gray;
+}
+
+.faculty .faculty-row .faculty-col1 #teacher {
+  font-size: 2.2rem;
+  display: block;
+  font-weight: 700;
+  color: black;
+  letter-spacing: 0.2rem;
+  margin: 5% 0;
+}
+
+.faculty .faculty-row .faculty-col1 img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+
+.faculty .faculty-row .faculty-col1 p {
+  margin: 5% 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: gray;
+  word-spacing: 0.4rem;
+}
+
+.faculty .faculty-row .faculty-col1 h3 {
+  font-size: 1.7rem;
+}
+
+.faculty .faculty-row .faculty-col1 h4 {
+  margin-top: 3%;
+  color: gray;
+  font-size: 1.3rem;
+}
+
+.faculty .faculty-row .faculty-col2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30rem;
+          flex: 1 1 30rem;
+}
+
+.faculty .faculty-row .faculty-col2 video {
+  width: 100%;
+}
+
+#programs {
+  min-height: 100vh;
+  background: #fff;
+  width: 80%;
+  margin: auto;
+  padding: 10% 0;
+}
+
+#programs .programs-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#programs .programs-text h2 {
+  font-size: 2rem;
+  color: gray;
+  font-weight: normal;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.3rem;
+  margin-bottom: 5%;
+}
+
+#programs .programs-text h3 {
+  font-size: 3rem;
+  color: #161616;
+}
+/*# sourceMappingURL=style.css.map */

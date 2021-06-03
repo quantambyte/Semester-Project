@@ -1,0 +1,36 @@
+
+.landing-div{
+    position: relative;
+
+    min-height: 100vh;
+    background: $background-color;
+}
+
+.main-landing{
+    min-height: 70vh;
+
+    @include flex( center , center , column);
+    
+    text-align: center;
+
+    h2{
+        color: #fe6f57;
+        letter-spacing: 0.5rem;
+        font-weight: 580;
+        font-size: 2rem;
+        margin-bottom: 5%;
+    }
+
+    h3{
+        color: #363636;
+        font-weight: 800;
+        letter-spacing: 0.2rem;
+        font-size: 5rem;
+        margin-bottom: 5%;
+    }
+
+    hr{
+        color: #fe6f57;
+        width: 8%;
+    }
+}

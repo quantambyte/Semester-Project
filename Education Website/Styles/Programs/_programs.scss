@@ -1,0 +1,27 @@
+#programs{
+    min-height: 100vh;
+    background: #fff;
+
+    width: 80%;
+    margin: auto;
+    padding: 10% 0;
+
+    .programs-text{
+        @include flex(center , center , column);
+        text-align: center;
+
+        h2{
+            font-size: 2rem;
+            color: $gray-text;
+            font-weight: normal;
+            letter-spacing: 0.2rem;
+            word-spacing: 0.3rem;
+            margin-bottom: 5%;
+        }
+
+        h3{
+            font-size: 3rem;
+            color: rgb(22, 22, 22);
+        }
+    }
+}

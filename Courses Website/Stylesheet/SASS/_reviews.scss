@@ -1,0 +1,65 @@
+// reviews section
+
+#reviews{
+    background: $dark-1;
+    min-height: 100vh;
+    padding: 10% 0;
+
+    .review-items{
+        @include flexbox(center, center , row);
+        flex-wrap: wrap;
+        margin-top: 5%;
+
+        .review-item{
+            flex: 1 1 25rem;
+
+            padding: 0 1.5rem;
+            margin: 3rem;
+
+            @include flexbox(center , center , column);
+
+            img{
+                max-width: 10rem;
+                border: 0.5rem solid $dark-2;
+                border-radius: 50%;
+                margin-bottom: 1.5rem;
+                transition: all 0.5s ease;
+            }
+            img:hover{
+                transform: translateX(3rem) rotate(360deg);
+                box-shadow: $shadow;
+            }
+
+            p{
+                font-size: 2rem;
+                color: $white-color-1;
+                margin: 0 0 1.5rem;
+
+                i{
+                    font-size: 1rem;
+                }
+
+                .fa-quote-left{
+                    margin-right: 1rem;
+                }
+                .fa-quote-right{
+                    margin-left: 1rem;
+                }
+            }
+
+            h3{
+                text-transform: capitalize;
+                font-size: 1.6rem;
+                color: $main-color;
+                font-weight: 500;
+                margin: 0 0 1rem;
+            }
+
+            span{
+                display: block;
+                font-size: 1.6rem;
+                color: $white-color-2;
+            }
+        }
+    }
+}

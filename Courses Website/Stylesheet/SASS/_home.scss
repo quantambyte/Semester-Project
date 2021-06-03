@@ -1,0 +1,117 @@
+// home section
+#home{
+
+    background: $dark-1;
+    min-height: 100vh;
+
+    padding-top:  15%;
+    overflow: hidden;
+
+    .home-text,
+    .home-img{
+        width: 50%;
+        padding: 0 1.5rem;
+
+        flex: 1 1 41rem;
+    }
+    .home-text{
+        h1{
+            font-size: 6rem;
+            color: $main-color;
+            text-transform: uppercase;
+            line-height: 1.2;
+
+            span{
+                color: $color-2;
+                position: relative;
+                z-index: 1;
+            }
+
+            span::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 0.2rem;
+                background: $white-color-1;
+
+                bottom: 1.5rem;
+                transform: skewY(-3deg);
+
+                z-index: -1;
+            }
+        }
+
+        h2{
+            font-size: 3rem;
+            font-weight: 300;
+            color: $white-color-1;
+            margin: 1.5rem 0 4rem;
+            line-height: 1.1;
+        }
+    }
+
+    
+    .home-img-inner{
+        max-width: 40rem;
+        margin: auto;
+        position: relative;
+
+        img{
+            width: 100%;
+            animation: zoomInOut 5s linear infinite;
+        }
+
+        .home-courses{
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+            animation: spinCourses 25s linear infinite;
+
+            .home-course-item{
+                position: absolute;
+                width: 8.5rem;
+                height: 8.5rem;
+
+                border-radius: 50%;
+
+                @include flexbox(center , center , column);
+
+                text-transform: capitalize;
+                font-size: 1.6rem;
+
+                color: $white-color-1;
+            }
+
+            .home-course-item:nth-child(1){
+                left: -4rem;
+                top: calc( 50% - 4rem);
+                background: $color-1;
+            }
+
+            .home-course-item:nth-child(2){
+                right: -4rem;
+                top: calc( 50% - 4rem);
+                background: $color-2;
+            }
+
+            .home-course-item:nth-child(3){
+                top: -4rem;
+                left: calc( 50% - 4rem);
+                background: $main-color;
+            }
+
+            .home-course-item:nth-child(4){
+                bottom: -4rem;
+                right: calc( 50% - 4rem);
+                background: $dark-2;
+            }
+
+        }
+    }
+}

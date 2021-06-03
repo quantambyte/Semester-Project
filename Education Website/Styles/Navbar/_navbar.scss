@@ -1,0 +1,113 @@
+header.navbar-header{
+
+
+    min-height: 20vh;
+    width: 80%;
+    margin: auto;
+
+
+    @include flex( center , space-between , column );
+    flex-wrap: wrap;
+
+    .top-menu{
+        @include flex( space-between , center ,row );
+
+        .logo{
+            flex: 1 1 20rem;
+        }
+
+        .top-menu-contacts{
+            padding: 4% 0;
+            flex: 1 1 40rem;
+        
+            @include flex( space-between , center , row );
+
+            .top-menu-contacts-item{
+    
+                padding: 1% 2%;
+                @include flex( center , center , row);
+            
+                .top-menu-contacts-item-icon{
+                    margin: 0 15%;
+                
+                    img{
+                        width:4rem;
+                        margin: 0 5%;
+                    }
+                }
+            
+            
+                .top-menu-contacts-item-content{
+                    
+                    h3{
+                        font-weight: 550;
+                        font-size: 1.9rem;
+                    }
+            
+                    h4{
+                        font-weight: normal;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    
+    }
+
+    nav{
+
+        position: sticky;
+        top: 0;
+
+        @include flex(space-evenly , center , row);
+
+        background: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        padding: 1.5% 3%;
+
+        font-weight: bold;
+        color: $gray-text;
+
+
+        .active{
+            color: orangered;
+        }
+
+        li{
+            font-size: 1.4rem;
+        }
+
+        ul.nav-links{
+            flex: 1 1 40rem;
+            @include flex( space-between , center , row );
+
+           
+        }
+
+        ul.nav-social-media{
+            flex: 1 1 40rem;
+            @include flex( space-between , center , row );
+            padding-left: 30% ;
+
+            li{
+
+
+                img{
+                    width: 20px;
+                    margin: 0 5%;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 1145px){
+    .top-menu-contacts{
+        display: none;
+        background: black;
+    }
+}
