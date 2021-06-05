@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: 'Montserrat' , sans-serif;
+  scroll-behavior: smooth;
 }
 
 li,
@@ -29,8 +30,39 @@ a {
   color: gray;
 }
 
+@-webkit-keyframes pen-animation {
+  0%, 100% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    -webkit-transform: translateX(3rem);
+            transform: translateX(3rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
+@keyframes pen-animation {
+  0%, 100% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    -webkit-transform: translateX(3rem);
+            transform: translateX(3rem);
+  }
+  50% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    -webkit-transform: translateX(0rem);
+            transform: translateX(0rem);
+  }
+}
+
 .landing-div {
   position: relative;
+  overflow: hidden;
   min-height: 100vh;
   background: #ece8e8;
 }
@@ -58,7 +90,8 @@ a {
   letter-spacing: 0.5rem;
   font-weight: 580;
   font-size: 2rem;
-  margin-bottom: 5%;
+  margin: 5% 0;
+  z-index: 1;
 }
 
 .main-landing h3 {
@@ -67,11 +100,31 @@ a {
   letter-spacing: 0.2rem;
   font-size: 5rem;
   margin-bottom: 5%;
+  z-index: 1;
 }
 
 .main-landing hr {
   color: #fe6f57;
   width: 8%;
+  z-index: 1;
+}
+
+.main-landing img {
+  position: absolute;
+}
+
+.main-landing #img-2 {
+  bottom: -5%;
+  right: 10%;
+  -webkit-animation: pen-animation 3s linear infinite;
+          animation: pen-animation 3s linear infinite;
+}
+
+.main-landing #img-3 {
+  bottom: -20%;
+  left: 3%;
+  -webkit-animation: pen-animation 3s linear infinite;
+          animation: pen-animation 3s linear infinite;
 }
 
 header.navbar-header {
@@ -174,9 +227,6 @@ header.navbar-header .top-menu .top-menu-contacts .top-menu-contacts-item .top-m
 }
 
 header.navbar-header nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,11 +300,12 @@ header.navbar-header nav ul.nav-social-media li img {
   margin: 0 5%;
 }
 
-@media screen and (max-width: 1145px) {
-  .top-menu-contacts {
-    display: none;
-    background: black;
-  }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 80%;
+  margin: auto;
+  z-index: 1000;
 }
 
 #about-us {
@@ -711,5 +762,45 @@ header.navbar-header nav ul.nav-social-media li img {
 #programs .programs-text h3 {
   font-size: 3rem;
   color: #161616;
+}
+
+#programs .programs-cards {
+  padding: 3% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#programs .programs-cards .programs-card {
+  border: 1px solid transparent;
+  outline: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+          box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+  margin: 1%;
+  padding: 2%;
+}
+
+#programs .programs-cards .programs-card img {
+  max-width: 40rem;
+  width: 100%;
+}
+
+#programs .programs-cards .programs-card img:hover {
+  background: #fff;
 }
 /*# sourceMappingURL=style.css.map */

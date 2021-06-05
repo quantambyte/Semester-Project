@@ -2,6 +2,7 @@
 .landing-div{
     position: relative;
 
+    overflow: hidden;
     min-height: 100vh;
     background: $background-color;
 }
@@ -18,7 +19,8 @@
         letter-spacing: 0.5rem;
         font-weight: 580;
         font-size: 2rem;
-        margin-bottom: 5%;
+        margin: 5% 0;
+        z-index: 1;
     }
 
     h3{
@@ -27,10 +29,39 @@
         letter-spacing: 0.2rem;
         font-size: 5rem;
         margin-bottom: 5%;
+        z-index: 1;
     }
 
     hr{
         color: #fe6f57;
         width: 8%;
+        z-index: 1;
+    }
+
+    img{
+        position: absolute;
+    }
+
+
+    #img-2{
+        bottom: -5%;
+        right: 10%;
+        animation: pen-animation 3s linear infinite;
+    }
+
+    #img-3{
+        bottom: -20%;
+        left: 3%;
+        animation: pen-animation 3s linear infinite;
+    }
+}
+
+@media (max-width: 1030px){
+    
+
+    
+
+    .main-landing{
+        
     }
 }

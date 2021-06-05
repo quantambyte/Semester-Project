@@ -56,8 +56,6 @@ header.navbar-header{
 
     nav{
 
-        position: sticky;
-        top: 0;
 
         @include flex(space-evenly , center , row);
 
@@ -99,15 +97,18 @@ header.navbar-header{
                 }
             }
         }
+
+        
     }
 
 
 }
 
-
-@media screen and (max-width: 1145px){
-    .top-menu-contacts{
-        display: none;
-        background: black;
-    }
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 80%;
+    margin: auto;
+    z-index: 1000;
 }
+

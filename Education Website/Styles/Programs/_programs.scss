@@ -24,4 +24,32 @@
             color: rgb(22, 22, 22);
         }
     }
+
+    .programs-cards{
+
+        padding: 3% 0;
+        @include flex(center , center , row);
+        flex-wrap: wrap;
+
+        .programs-card{
+
+            border: 1px solid transparent;
+            outline: none;
+            flex: 1 1 25rem;
+
+            box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 0px 2px;
+
+            margin: 1%;
+            padding: 2%;
+
+            img{
+                max-width: 40rem;
+                width: 100%;
+            }
+
+            img:hover{
+                background: #fff;
+            }
+        }
+    }
 }
