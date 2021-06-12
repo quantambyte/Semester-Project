@@ -119,3 +119,26 @@ footer{
         }
     }
 }
+
+// media query
+@media( max-width: 1000px){
+    footer{
+
+        padding-bottom: 0;
+
+        .footer-item{
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .footer-news{
+            // display: none;
+        }
+    }
+}
+
+@media (max-width: 550px){
+    .footer-news{
+        display: none;
+    }
+}

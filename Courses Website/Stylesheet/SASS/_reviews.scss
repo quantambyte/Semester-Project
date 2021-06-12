@@ -3,7 +3,7 @@
 #reviews{
     background: $dark-1;
     min-height: 100vh;
-    padding: 10% 0;
+    padding: 5% 0;
 
     .review-items{
         @include flexbox(center, center , row);

@@ -109,7 +109,7 @@ header{
 
 
 // media query
-@media( max-width: 950px){
+@media( max-width: 1000px){
     header{
 
         position:relative;
@@ -125,12 +125,18 @@ header{
             opacity: 0;
 
             ul{
+                text-align: center;
                 li{
+                    border: 1px solid transparent;
                     margin: 0;
                     display: block;
                     margin: 1rem 0;
 
                     padding: 1rem 0;
+                }
+
+                li:hover{
+                    border: 1px solid $main-color;
                 }
 
             }

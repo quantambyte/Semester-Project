@@ -94,5 +94,5 @@ exports.signOut = (req , res) => {
 // middleware
 // this will automatically check if our generated token is expired or not
 // exports.requireSignIn = expressJwt( { 
-//     secret: process.env.JWT_SECRET_KEY
+//     secret: 'lol'
 // } )

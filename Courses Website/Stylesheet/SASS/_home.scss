@@ -115,3 +115,24 @@
         }
     }
 }
+
+
+
+// media query
+@media( max-width: 1000px){
+    
+    .home-text{
+
+        @include flexbox(center , center , column);
+        margin-bottom: 15%;
+
+        h1{
+            font-size: 4rem;
+        }
+
+        h2{
+            font-size: 2rem;
+        }
+    }
+
+}

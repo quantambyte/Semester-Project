@@ -23,11 +23,6 @@ body{
     overflow-x: hidden;
 }
 
-::before,
-::after{
-    box-sizing: border-box;
-}
-
 ul{
     list-style: none;
 }
@@ -45,6 +40,11 @@ img{
 p{
     font-size: 1.6rem;
     color: $white-color-2;
+}
+
+main{
+    min-height: 100vh;
+    background: $dark-1;
 }
 
 .container{
