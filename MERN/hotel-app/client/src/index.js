@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// ant-design css
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 // using redux for state management following steps will be followed 
 
 // 1. importing redux and react-redux packages 

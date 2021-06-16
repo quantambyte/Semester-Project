@@ -47,8 +47,9 @@ const Login = ( {history} ) => {
                     payload: res.data
                 } )
 
+                toast.success('You are Logged In :D')
                 // redirect to home
-                history.push('/')
+                history.push('/dashboard')
 
             }         
 

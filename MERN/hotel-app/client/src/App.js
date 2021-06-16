@@ -10,9 +10,13 @@ import 'react-toastify/dist/ReactToastify.css'
 import Home from './booking/Home'
 import Login from './auth/Login'
 import SignUp from './auth/SignUp'
+import Dashboard from './user dashboard/Dashboard'
+import SellerDashboard from './user dashboard/SellerDashboard'
+import NewHotel from './hotels/NewHotel'
 
 // importing components
 import NavBar from './components/NavBar'
+import PrivateRoute from './components/PrivateRoute'
 
 
 function App() {
@@ -24,14 +28,18 @@ function App() {
 
       <Switch>
         <Route exact path= '/' component = {Home} />
-      </Switch>
 
-      <Switch>
         <Route exact path= '/login' component = {Login} />
-      </Switch>
 
-      <Switch>
         <Route exact path= '/signup' component = {SignUp} />
+
+        <PrivateRoute exact path = '/dashboard' component = {Dashboard} />
+
+        <PrivateRoute exact path = '/dashboard/seller' component = {SellerDashboard} />
+
+        <PrivateRoute exact path = '/hotels/new' component = {NewHotel} />
+
+
       </Switch>
 
     </BrowserRouter>
