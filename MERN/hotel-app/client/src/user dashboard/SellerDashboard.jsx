@@ -1,125 +1,133 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { HomeOutlined } from "@ant-design/icons";
-import { createConnectAccount } from "../actions/stripe";
-import { toast } from "react-toastify";
+// import { HomeOutlined } from "@ant-design/icons";
+// import { createConnectAccount } from "../actions/stripe";
+// import { toast } from "react-toastify";
 
 // components
 import DashboardNav from "../components/DashboardNavBar";
 import ConnectNav from "../components/ConnectNavBar";
 
+// action
+import { sellerHotels } from "../actions/hotel";
+
 const SellerDashboard = () => {
+  const { auth } = useSelector((state) => ({ ...state }));
 
+  const [hotels, setHotels] = useState([]);
 
-    const { auth } = useSelector((state) => ({ ...state }));
-    const [loading, setLoading] = useState(false);
+  const loadSellersHotels = async () => {
+    let res = await sellerHotels(auth.token);
+    setHotels(res.data);
+  };
 
-    const handleClick = async () => {
+  useEffect(() => {
+    // loadSellersHotels();
+  }, []);
 
-        setLoading(true);
+  // const [loading, setLoading] = useState(false);
 
-        try {
+  // const handleClick = async () => {
 
-        let res = await createConnectAccount(auth.token);
-        console.log(res); // get login link
+  //     setLoading(true);
 
-        } catch (err) {
+  //     try {
 
-        console.log(err);
-        toast.error("Stripe connect failed, Try again.");
+  //     let res = await createConnectAccount(auth.token);
+  //     console.log(res); // get login link
 
-        setLoading(false);
+  //     } catch (err) {
 
-        }
-    };
+  //     console.log(err);
+  //     toast.error("Stripe connect failed, Try again.");
 
-    const connected = () => (
+  //     setLoading(false);
 
-        <div className="container-fluid">
+  //     }
+  // };
 
-        <div className="row">
-
-            <div className="col-md-10">
-
-            <h2>Your Hotels</h2>
-
-            </div>
-            <div className="col-md-2">
-
-            <Link to="/hotels/new" className="btn btn-primary">
-                Add New Hotel
-            </Link>
-
-            </div>
+  const connected = () => (
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-10">
+          <h2>Your Hotels</h2>
         </div>
+        <div className="col-md-2">
+          <Link to="/hotels/new" className="btn btn-primary">
+            Add New Hotel
+          </Link>
         </div>
-    );
+      </div>
 
-    const notConnected = () => (
-        <div className="container-fluid">
-            
-            <div className="row">
+      <div className="row">{JSON.stringify(hotels)}</div>
+    </div>
+  );
 
-                <div className="col-md-6 offset-md-3 text-center">
+  // const notConnected = () => (
+  //     <div className="container-fluid">
 
-                    <div className="p-5 pointer">
+  //         <div className="row">
 
-                    <HomeOutlined className="h1" />
+  //             <div className="col-md-6 offset-md-3 text-center">
 
-                    <h4>Setup payouts to post hotel rooms</h4>
+  //                 <div className="p-5 pointer">
 
-                    <p className="lead">
-                    MERN partners with stripe to transfer earnings to your bank
-                    account
-                    </p>
+  //                 <HomeOutlined className="h1" />
 
-                    <button
-                    disabled={loading}
-                    onClick={handleClick}
-                    className="btn btn-primary mb-3"
-                    >
-                    {loading ? "Processing..." : "Setup Payouts"}
-                    </button>
+  //                 <h4>Setup payouts to post hotel rooms</h4>
 
-                    <p className="text-muted">
+  //                 <p className="lead">
+  //                 MERN partners with stripe to transfer earnings to your bank
+  //                 account
+  //                 </p>
 
-                    <small>
-                        You'll be redirected to Stripe to complete the onboarding
-                        process.
-                    </small>
+  //                 <button
+  //                 disabled={loading}
+  //                 onClick={handleClick}
+  //                 className="btn btn-primary mb-3"
+  //                 >
+  //                 {loading ? "Processing..." : "Setup Payouts"}
+  //                 </button>
 
-                    </p>
+  //                 <p className="text-muted">
 
-                </div>
-                </div>
-            </div>
-            
-        </div>
-    );
+  //                 <small>
+  //                     You'll be redirected to Stripe to complete the onboarding
+  //                     process.
+  //                 </small>
 
-    return (
-        <>
-        <div className="container-fluid bg-secondary p-5">
-            <ConnectNav />
-        </div>
+  //                 </p>
 
-        <div className="container-fluid p-4">
-            <DashboardNav />
-        </div>
+  //             </div>
+  //             </div>
+  //         </div>
 
-        {auth &&
+  //     </div>
+  // );
+
+  return (
+    <>
+      <div className="container-fluid bg-secondary p-5">
+        <ConnectNav />
+      </div>
+
+      <div className="container-fluid p-4">
+        <DashboardNav />
+      </div>
+
+      {/* after stripe setup */}
+      {/* {auth &&
         auth.user &&
         auth.user.stripe_seller &&
         auth.user.stripe_seller.charges_enabled
             ? connected()
-            : notConnected()}
+            : notConnected()} */}
 
-        {/* <pre>{JSON.stringify(auth, null, 4)}</pre> */}
-        </>
-    );
+      {connected()}
+    </>
+  );
 };
 
 export default SellerDashboard;

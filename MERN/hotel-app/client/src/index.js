@@ -1,21 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 // ant-design css
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
-// using redux for state management following steps will be followed 
+// using redux for state management following steps will be followed
 
-// 1. importing redux and react-redux packages 
-import { createStore , combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+// 1. importing redux and react-redux packages
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import rootReducer from './reducers'
+import rootReducer from "./reducers";
 
 // 2. create user reducer function
 
@@ -23,21 +22,17 @@ import rootReducer from './reducers'
 
 // 4. create redux store
 
-const store = createStore( rootReducer ,  composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools());
 
 // 5. provide redux store to entire app
 
-
-
 ReactDOM.render(
   <React.StrictMode>
-
     <Provider store={store}>
       <App />
     </Provider>
-    
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

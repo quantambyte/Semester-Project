@@ -1,14 +1,13 @@
-import express from 'express';
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
 // controllers
-import { createConnectAccount } from '../controllers/stripe'
+import { createConnectAccount } from "../controllers/stripe";
 
 // middleware
-import { requireSignIn } from '../middlewares'
+import { requireSignIn } from "../middlewares";
 
 // sign up route
-router.post('/create-connect-account' , requireSignIn, createConnectAccount)
+router.post("/create-connect-account", requireSignIn, createConnectAccount);
 
-
-module.exports = router
+module.exports = router;
