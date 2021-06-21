@@ -7,11 +7,11 @@ const hotelSchema = new Schema(
   {
     title: {
       type: String,
-      required: "Please Enter Name of Hotel",
+      required: "Title is required",
     },
     content: {
       type: String,
-      required: "Please Enter Details of Hotel",
+      required: "Content is required",
       maxlength: 10000,
     },
     location: {
@@ -19,7 +19,7 @@ const hotelSchema = new Schema(
     },
     price: {
       type: Number,
-      required: "Enter Price of Hotel",
+      required: "Price is required",
       trim: true,
     },
     postedBy: {
@@ -38,7 +38,6 @@ const hotelSchema = new Schema(
     },
     bed: {
       type: Number,
-      required: "Enter Number of Beds",
     },
   },
   { timestamps: true }

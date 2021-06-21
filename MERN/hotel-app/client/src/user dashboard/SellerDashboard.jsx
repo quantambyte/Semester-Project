@@ -2,51 +2,64 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-// import { HomeOutlined } from "@ant-design/icons";
-// import { createConnectAccount } from "../actions/stripe";
-// import { toast } from "react-toastify";
+import { HomeOutlined } from "@ant-design/icons";
+import { createConnectAccount } from "../actions/stripe";
+
+import { toast } from "react-toastify";
 
 // components
 import DashboardNav from "../components/DashboardNavBar";
 import ConnectNav from "../components/ConnectNavBar";
+import SmallCard from "../components/cards/SmallCard";
 
 // action
-import { sellerHotels } from "../actions/hotel";
+import { sellerHotels, deleteHotel } from "../actions/hotel";
 
 const SellerDashboard = () => {
   const { auth } = useSelector((state) => ({ ...state }));
 
   const [hotels, setHotels] = useState([]);
-
-  const loadSellersHotels = async () => {
-    let res = await sellerHotels(auth.token);
-    setHotels(res.data);
-  };
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // loadSellersHotels();
-  }, []);
+    loadSellersHotels();
+  });
 
-  // const [loading, setLoading] = useState(false);
+  const loadSellersHotels = async () => {
+    console.log("Loading Seller Hotels");
+    // try {
+    //   let res = await sellerHotels(auth.token);
+    //   console.log(res.data);
+    //   setHotels(res.data);
+    // } catch (err) {
+    //   toast.error(err);
+    //   console.log(err);
+    // }
 
-  // const handleClick = async () => {
+    let { data } = await sellerHotels(auth.token);
+    setHotels(data);
+  };
 
-  //     setLoading(true);
+  const handleHotelDelete = async (hotelId) => {
+    if (!window.confirm("Are You Sure You want to Delete Hotel?")) return;
+    deleteHotel(auth.token, hotelId).then((res) => {
+      toast.success("Hotel Deleted");
+      loadSellersHotels();
+    });
+  };
 
-  //     try {
-
-  //     let res = await createConnectAccount(auth.token);
-  //     console.log(res); // get login link
-
-  //     } catch (err) {
-
-  //     console.log(err);
-  //     toast.error("Stripe connect failed, Try again.");
-
-  //     setLoading(false);
-
-  //     }
-  // };
+  const handleClick = async () => {
+    setLoading(true);
+    try {
+      let res = await createConnectAccount(auth.token);
+      console.log(res); // get login link
+      window.location.href = res.data;
+    } catch (err) {
+      console.log(err);
+      toast.error("Stripe connect failed, Try again.");
+      setLoading(false);
+    }
+  };
 
   const connected = () => (
     <div className="container-fluid">
@@ -56,56 +69,53 @@ const SellerDashboard = () => {
         </div>
         <div className="col-md-2">
           <Link to="/hotels/new" className="btn btn-primary">
-            Add New Hotel
+            + Add New
           </Link>
         </div>
       </div>
 
-      <div className="row">{JSON.stringify(hotels)}</div>
+      <div className="row">
+        {hotels.map((h) => (
+          <SmallCard
+            key={h._id}
+            h={h}
+            showViewMoreButton={false}
+            owner={true}
+            handleHotelDelete={handleHotelDelete}
+          />
+        ))}
+      </div>
     </div>
   );
 
-  // const notConnected = () => (
-  //     <div className="container-fluid">
-
-  //         <div className="row">
-
-  //             <div className="col-md-6 offset-md-3 text-center">
-
-  //                 <div className="p-5 pointer">
-
-  //                 <HomeOutlined className="h1" />
-
-  //                 <h4>Setup payouts to post hotel rooms</h4>
-
-  //                 <p className="lead">
-  //                 MERN partners with stripe to transfer earnings to your bank
-  //                 account
-  //                 </p>
-
-  //                 <button
-  //                 disabled={loading}
-  //                 onClick={handleClick}
-  //                 className="btn btn-primary mb-3"
-  //                 >
-  //                 {loading ? "Processing..." : "Setup Payouts"}
-  //                 </button>
-
-  //                 <p className="text-muted">
-
-  //                 <small>
-  //                     You'll be redirected to Stripe to complete the onboarding
-  //                     process.
-  //                 </small>
-
-  //                 </p>
-
-  //             </div>
-  //             </div>
-  //         </div>
-
-  //     </div>
-  // );
+  const notConnected = () => (
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-6 offset-md-3 text-center">
+          <div className="p-5 pointer">
+            <HomeOutlined className="h1" />
+            <h4>Setup payouts to post hotel rooms</h4>
+            <p className="lead">
+              MERN partners with stripe to transfer earnings to your bank
+              account
+            </p>
+            <button
+              disabled={loading}
+              onClick={handleClick}
+              className="btn btn-primary mb-3">
+              {loading ? "Processing..." : "Setup Payouts"}
+            </button>
+            <p className="text-muted">
+              <small>
+                You'll be redirected to Stripe to complete the onboarding
+                process.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -119,11 +129,11 @@ const SellerDashboard = () => {
 
       {/* after stripe setup */}
       {/* {auth &&
-        auth.user &&
-        auth.user.stripe_seller &&
-        auth.user.stripe_seller.charges_enabled
-            ? connected()
-            : notConnected()} */}
+      auth.user &&
+      auth.user.stripe_seller &&
+      auth.user.stripe_seller.charges_enabled
+        ? connected()
+        : notConnected()} */}
 
       {connected()}
     </>

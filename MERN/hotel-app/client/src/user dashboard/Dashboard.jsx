@@ -24,7 +24,7 @@ const Dashboard = () => {
           </div>
 
           <div className="col col-md-2">
-            <Link className="btn btn-primary" to="/ ">
+            <Link className="btn btn-primary" to="/">
               Browse Hotels
             </Link>
           </div>

@@ -53,6 +53,8 @@ const SmallCard = ({
 
               <p className="alert alert-info">{h.location}</p>
 
+              {/* <p className="card-text">Posted By: {h.postedBy}</p> */}
+
               <p className="card-text">
                 {`${h.content.substring(0, 200)} ...`}
               </p>

@@ -10,7 +10,7 @@ import { createHotel } from "../actions/hotel";
 // component
 import CreateNewHotel from "../components/forms/CreateNewHotel";
 
-const NewHotel = () => {
+const NewHotel = ({ history }) => {
   const { auth } = useSelector((state) => ({ ...state }));
   const { token } = auth;
 
@@ -55,9 +55,7 @@ const NewHotel = () => {
       let res = await createHotel(token, hotelData);
       console.log(`Hotel create ${res}`);
       toast.success("New Hotel Posted");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      history.push("/");
     } catch (err) {
       console.log(err);
       toast.error(err.response.data);

@@ -12,6 +12,7 @@ import SignUp from "./auth/SignUp";
 import Dashboard from "./user dashboard/Dashboard";
 import SellerDashboard from "./user dashboard/SellerDashboard";
 import NewHotel from "./hotels/NewHotel";
+import EditHotel from "./hotels/EditHotel";
 
 // importing components
 import NavBar from "./components/NavBar";
@@ -39,6 +40,8 @@ function App() {
         />
 
         <PrivateRoute exact path="/hotels/new" component={NewHotel} />
+
+        <PrivateRoute exact path="/hotel/edit/:hotelId" component={EditHotel} />
       </Switch>
     </BrowserRouter>
   );
