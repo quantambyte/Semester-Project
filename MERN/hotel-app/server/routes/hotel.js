@@ -12,6 +12,8 @@ import {
   returnImage,
   sellerHotels,
   remove,
+  read,
+  update,
 } from "../controllers/hotel";
 
 // create hotel
@@ -28,5 +30,17 @@ router.get("/seller-hotels", requireSignIn, sellerHotels);
 
 // delete hotel
 router.delete("/delete-hotel/:hotelId", requireSignIn, hotelOwner, remove);
+
+// get a single hotel
+router.get("/hotel/:hotelId", read);
+
+// update hotel
+router.put(
+  "/update-hotel/:hotelId",
+  requireSignIn,
+  hotelOwner,
+  formidable(),
+  update
+);
 
 module.exports = router;

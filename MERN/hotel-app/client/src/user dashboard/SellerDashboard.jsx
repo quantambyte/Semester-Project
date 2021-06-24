@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -23,25 +23,21 @@ const SellerDashboard = () => {
 
   useEffect(() => {
     loadSellersHotels();
-  });
+  }, []);
 
   const loadSellersHotels = async () => {
-    console.log("Loading Seller Hotels");
-    // try {
-    //   let res = await sellerHotels(auth.token);
-    //   console.log(res.data);
-    //   setHotels(res.data);
-    // } catch (err) {
-    //   toast.error(err);
-    //   console.log(err);
-    // }
-
-    let { data } = await sellerHotels(auth.token);
-    setHotels(data);
+    try {
+      let res = await sellerHotels(auth.token);
+      // console.log(res.data);
+      setHotels(res.data);
+    } catch (err) {
+      toast.error(err);
+      console.log(err);
+    }
   };
 
   const handleHotelDelete = async (hotelId) => {
-    if (!window.confirm("Are You Sure You want to Delete Hotel?")) return;
+    if (!window.confirm("Are you sure?")) return;
     deleteHotel(auth.token, hotelId).then((res) => {
       toast.success("Hotel Deleted");
       loadSellersHotels();

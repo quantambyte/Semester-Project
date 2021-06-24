@@ -53,16 +53,14 @@ export const returnImage = async (req, res) => {
 };
 
 export const sellerHotels = async (req, res) => {
-  let hotels = await Hotel.find({ postedBy: req.user._id })
+  let all = await Hotel.find({ postedBy: req.user._id })
     .select("-image.data")
     .populate("postedBy", "_id name")
     .exec();
 
-  // console.log("Results", hotels);
+  // console.log(hotels);
 
-  return res.json(hotels);
-
-  // res.send(all);
+  return res.send(all);
 };
 
 export const remove = async (req, res) => {
@@ -71,4 +69,40 @@ export const remove = async (req, res) => {
     .exec();
 
   return res.json(removed);
+};
+
+export const read = async (req, res) => {
+  let hotel = await Hotel.findById(req.params.hotelId)
+    .select("-image.data")
+    .exec();
+
+  console.log("Hotel Found");
+  return res.send(hotel);
+};
+
+export const update = async (req, res) => {
+  try {
+    let fields = req.fields;
+    let files = req.files;
+
+    let data = { ...fields };
+
+    if (files.image) {
+      let image = {};
+      image.data = fs.readFileSync(files.image.path);
+      image.contentType = files.image.type;
+
+      data.image = image;
+    }
+
+    let updated = await Hotel.findByIdAndUpdate(req.params.hotelId, data, {
+      new: true,
+    }).select("-image.data");
+
+    return res.json(updated);
+  } catch (err) {
+    console.log(err);
+
+    return res.status(400).send("Failed to Update Hotel! Try Again");
+  }
 };

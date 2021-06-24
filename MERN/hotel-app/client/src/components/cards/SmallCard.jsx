@@ -59,6 +59,8 @@ const SmallCard = ({
                 {`${h.content.substring(0, 200)} ...`}
               </p>
 
+              <p className="card-text">Posted By: {h.postedBy.name}</p>
+
               <p className="card-text">
                 <span className="float-right text-primary">
                   Available for {diffDays(h.from, h.to)}{" "}

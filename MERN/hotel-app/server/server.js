@@ -4,7 +4,7 @@ require("dotenv").config();
 import cors from "cors";
 import mongoose from "mongoose";
 
-// we can't use import with morgan package D:
+// we can't use import with morgan package :D
 const morgan = require("morgan");
 
 const app = express();
@@ -12,8 +12,9 @@ const app = express();
 // database connection
 mongoose
   .connect(process.env.DB, {
-    useUnifiedTopology: true,
     useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
     useCreateIndex: true,
   })
   .then(() => console.log("Connected to DB"))

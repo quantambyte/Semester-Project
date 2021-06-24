@@ -21,22 +21,30 @@ export const diffDays = (from, to) => {
   return difference;
 };
 
-export const sellerHotels = async (token) => {
+export const sellerHotels = async (token) =>
   await axios.get(`${process.env.REACT_APP_API}/seller-hotels`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
-};
 
-export const deleteHotel = async (token, hotelId) => {
+export const deleteHotel = async (token, hotelId) =>
   await axios.delete(`${process.env.REACT_APP_API}/delete-hotel/${hotelId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
-};
 
-export const readOneHotel = async (hotelId) => {
+export const read = async (hotelId) =>
   await axios.get(`${process.env.REACT_APP_API}/hotel/${hotelId}`);
-};
+
+export const updateHotel = async (token, data, hotelId) =>
+  await axios.put(
+    `${process.env.REACT_APP_API}/update-hotel/${hotelId}`,
+    data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
