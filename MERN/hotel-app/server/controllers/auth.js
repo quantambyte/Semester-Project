@@ -2,9 +2,7 @@ import User from "../models/user";
 import jwt from "jsonwebtoken";
 
 export const signUp = async (req, res) => {
-  
   try {
-
     const { name, email, password } = req.body;
 
     // validation
@@ -36,10 +34,10 @@ export const signUp = async (req, res) => {
 export const login = async (req, res) => {
   // console.log(req.body)
 
-  const { email, password } = req.body;
-
   // try to find user
   try {
+    const { email, password } = req.body;
+
     // first check if the user exists
     let user = await User.findOne({ email }).exec();
 
